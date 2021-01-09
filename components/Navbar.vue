@@ -2,18 +2,23 @@
   <div>
     <!-- <MobileMenubar /> -->
     <div class="mx-10 md:m-auto">
-      <div class="fixed top-0 left-0 w-full z-20 px-3 md:px-10">
+      <div class="bg-white dark:bg-gray-800 dark:text-white fixed top-0 left-0 w-full z-20 px-3 md:px-10  transition-all duration-300">
         <div
-          class="bg-white flex items-center w-full justify-between max-w-screen-lg m-auto mt-5 rounded-md py-3"
-          :class="{'border border-gray-300 transition-shadow duration-300 shadow-md hover:shadow-lg ' : showIconPhoto}"
+          class="transition-all duration-500 flex items-center w-full justify-between max-w-screen-lg m-auto mt-5 rounded-md py-3 px-0"
+          :class="{'border border-gray-300 dark:border-gray-500 transition-shadow duration-300 shadow-lg hover:shadow-2xl px-2' : showIconPhoto}"
         >
-          <div class="p-3 font-extrabold">
-            <div class="flex items-center transition-all duration-500" v-if="showIconPhoto">
+          <div class="p-3 font-extrabold flex">
+            <div class="flex items-center" v-show="showIconPhoto">
               <img
                 src="~/assets/portrait.jpg"
                 class="w-8 transition-all rounded-full border border-white mr-2"
               />
               <div>Bardizba</div>
+            </div>
+            <div class="cursor-pointer">
+              <div class="text-2xl pl-3" @click="$store.commit('site/toggle')">
+                <span>{{$store.state.site.isDark ? '🌚' : '🌝' }}</span>
+              </div>
             </div>
           </div>
           <div class="py-3 pr-5">

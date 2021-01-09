@@ -1,6 +1,5 @@
 <template>
-  <div>
-    
+  <div :class="{'dark' : this.$store.state.site.isDark}">
     <Navbar />
     <Nuxt />
   </div>
