@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div class="mb-5 max-w-screen-xl">
+      <div class="mb-5 max-w-screen-xl mx-auto">
         <div class="container lg:px-40 pt-20 mx-auto">
           <div class="flex flex-wrap">
             <div
