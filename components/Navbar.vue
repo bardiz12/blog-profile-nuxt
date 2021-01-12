@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import MobileMenubar from "@/components/MobileMenubar";
+import MobileMenubar from "@/components/MobileMenuBar";
 export default {
   data() {
     return {
