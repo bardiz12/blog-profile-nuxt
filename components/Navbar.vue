@@ -2,10 +2,10 @@
   <div>
     <!-- <MobileMenubar /> -->
     <div class="mx-10 md:m-auto">
-      <div class="bg-white dark:bg-gray-800 dark:text-white fixed top-0 left-0 w-full z-20 px-3 md:px-10  transition-all duration-300">
+      <div class="bg-white dark:bg-gray-800 dark:text-white fixed top-0 left-0 w-full z-20 px-3 md:px-10  transition-all duration-100">
         <div
-          class="transition-all duration-500 flex items-center w-full justify-between max-w-screen-lg m-auto mt-5 rounded-md py-3 px-0"
-          :class="{'border border-gray-300 dark:border-gray-500 transition-shadow duration-300 shadow-lg hover:shadow-2xl px-2' : showIconPhoto}"
+          class="transition-all duration-200 flex items-center w-full justify-between max-w-screen-lg m-auto mt-5 rounded-md py-3 px-0"
+          :class="{'border border-gray-300 dark:border-gray-500 transition-shadow duration-200 shadow-lg hover:shadow-2xl px-2' : showIconPhoto}"
         >
           <div class="p-3 font-extrabold flex">
             <div class="flex items-center" v-show="showIconPhoto">
@@ -90,9 +90,10 @@
               </div>
             </div>
             <div class="hidden md:block">
-              <div class="flex flex-row space-x-3 text-sm uppercase font-extrabold">
-                <NuxtLink to="/">Home</NuxtLink>
-                <NuxtLink to="/about">About</NuxtLink>
+              <div class="flex flex-row space-x-5 text-sm uppercase font-extrabold">
+                <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+                <NuxtLink to="/about" class="nav-link">About</NuxtLink>
+                <NuxtLink to="/blog" class="nav-link">Blog</NuxtLink>
               </div>
             </div>
           </div>
@@ -123,7 +124,7 @@ export default {
   },
   methods: {
     handleScroll(event){
-        this.showIconPhoto = (window.scrollY > 400)
+        this.showIconPhoto = (window.scrollY > 330)
     }
   },
 };

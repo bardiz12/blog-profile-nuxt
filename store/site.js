@@ -10,5 +10,9 @@ export const mutations = {
     toggle(state) {
         state.isDark = !state.isDark;
         localStorage.setItem('is_dark', state.isDark);
+    },
+    changeThemeSetting(state, {isDark}){
+        state.isDark = isDark
+        localStorage.setItem('is_dark', state.isDark)
     }
 }

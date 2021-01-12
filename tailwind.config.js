@@ -13,7 +13,53 @@ module.exports = {
         ]
     },
     theme: {
-        darkSelector: ".dark"
+        darkSelector: ".dark",
+        extend: {
+            typography: (theme) => ({
+                dark: {
+                    css: {
+                        color: theme('colors.gray.300'),
+                        a: {
+                            color: theme('colors.blue.500'),
+                            '&:hover': {
+                                color: theme('colors.blue.500'),
+                            },
+                        },
+
+                        h1: {
+                            color: theme('colors.gray.300'),
+                        },
+                        h2: {
+                            color: theme('colors.gray.300'),
+                        },
+                        h3: {
+                            color: theme('colors.gray.300'),
+                        },
+                        h4: {
+                            color: theme('colors.gray.300'),
+                        },
+                        h5: {
+                            color: theme('colors.gray.300'),
+                        },
+                        h6: {
+                            color: theme('colors.gray.300'),
+                        },
+
+                        strong: {
+                            color: theme('colors.gray.300'),
+                        },
+
+                        code: {
+                            color: theme('colors.gray.300'),
+                        },
+
+                        figcaption: {
+                            color: theme('colors.gray.500'),
+                        },
+                    },
+                },
+            }),
+        }
     },
     variants: {
         backgroundColor: [
@@ -24,8 +70,12 @@ module.exports = {
             "dark-odd",
             "hover"
         ],
-        borderColor: ["dark", "dark-focus", "dark-focus-within"],
-        textColor: ["dark", "dark-hover", "dark-active"],
+        borderColor: ["dark", "dark-focus", "dark-focus-within", "hover"],
+        textColor: ["dark", "dark-hover", "dark-active", "hover"],
+        animate: ["dark", "hover"],
+        typography: ["responsive", "dark"]
     },
-    plugins: [require("tailwindcss-dark-mode")()]
+    plugins: [require("tailwindcss-dark-mode")(), require("@tailwindcss/typography")({
+        modifiers: [],
+    })]
 }

@@ -4,7 +4,7 @@
       <!-- <div> -->
       <img
         src="~/assets/portrait.jpg"
-        class="w-48 transition-all rounded-full border border-white animate-pulse"
+        class="w-48 rounded-full border border-white animate-pulse"
       />
       <!-- </div> -->
       <!-- <div> -->

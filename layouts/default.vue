@@ -1,17 +1,39 @@
 <template>
-  <div :class="{'dark' : this.$store.state.site.isDark}">
-    <Navbar />
-    <Nuxt />
+  <div :class="{'dark' : this.$store.state.site.isDark}" class="">
+    <div class="bg-gray-50 dark:bg-gray-800 dark:text-white transition-colors duration-100">
+      <Navbar />
+      <Nuxt class="pt-40" />
+    </div>
   </div>
 </template>
 
 
 <script>
+import "animate.css/animate.css"
 import Navbar from "@/components/Navbar";
 
 export default {
+  data(){
+    return {
+      mql: null  
+    }
+  },
   components: {
     Navbar
+  },
+  created(){
+    this.initThemeListener()
+  },
+  methods: {
+    initThemeListener(){
+      this.mql = window.matchMedia("(prefers-color-scheme: dark)");
+
+      this.mql.addEventListener("change", this.themeListener);
+    },
+    themeListener(event){
+      const {matches} = event
+      this.$store.commit('site/changeThemeSetting', {isDark: matches})
+    }
   },
 };
 </script>
