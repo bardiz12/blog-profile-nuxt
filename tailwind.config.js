@@ -16,11 +16,17 @@ module.exports = {
         darkSelector: ".dark",
         extend: {
             typography: (theme) => ({
+                a: {
+                    color: theme('colors.blue.600'),
+                    '&:hover': {
+                        color: theme('colors.blue.500'),
+                    },
+                },
                 dark: {
                     css: {
                         color: theme('colors.gray.300'),
                         a: {
-                            color: theme('colors.blue.500'),
+                            color: theme('colors.blue.600'),
                             '&:hover': {
                                 color: theme('colors.blue.500'),
                             },

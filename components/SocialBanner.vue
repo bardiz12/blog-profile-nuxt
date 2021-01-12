@@ -11,15 +11,28 @@
         <div class="flex items-center">
           <div class="pr-3 xs:hidden md:block"></div>
           <div class="text-3xl space-x-3">
-            <span>
-              <i class="fab fa-instagram text-pink-400"></i>
-            </span>
-            <span>
-              <i class="fab fa-twitter text-blue-300"></i>
-            </span>
-            <span>
-              <i class="fab fa-github"></i>
-            </span>
+            <a href="mailto:moch.bardizba@gmail.com">
+              <span>
+                <i class="fa fa-envelope dark:text-white text-gray-900"></i>
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/in/bardizba-z-476464128/">
+              <span> <i class="fab fa-linkedin text-blue-800 dark:text-blue-400"></i> </span>
+            </a>
+            <a href="https://github.com/bardiz12">
+              <span> <i class="fab fa-github"></i> </span>
+            </a>
+            <a href="https://instagram.com/bardiz12">
+              <span>
+                <i class="fab fa-instagram text-pink-400"></i>
+              </span>
+            </a>
+            <a href="https://twitter.com/bardiz12">
+              <span>
+                <i class="fab fa-twitter text-blue-300"></i>
+              </span>
+            </a>
+            
           </div>
         </div>
       </div>

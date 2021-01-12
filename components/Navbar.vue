@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <MobileMenubar /> -->
+    <MobileMenubar :show-menu="showMenu" :links="links" v-on:toggleMenu="toggleMenuFromMobile"/>
     <div class="mx-10 md:m-auto">
       <div class="bg-white dark:bg-gray-800 dark:text-white fixed top-0 left-0 w-full z-20 px-3 md:px-10  transition-all duration-100">
         <div
@@ -49,51 +49,14 @@
       From: "transform opacity-100 scale-100"
       To: "transform opacity-0 scale-95"
   -->
-              <div
-                v-show="showMenu"
-                class="transition origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-              >
-                <div
-                  class="py-1"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="options-menu"
-                >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    role="menuitem"
-                    >Account settings</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    role="menuitem"
-                    >Support</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    role="menuitem"
-                    >License</a
-                  >
-                  <form method="POST" action="#">
-                    <button
-                      type="submit"
-                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                      role="menuitem"
-                    >
-                      Sign out
-                    </button>
-                  </form>
-                </div>
-              </div>
+              
             </div>
             <div class="hidden md:block">
               <div class="flex flex-row space-x-5 text-sm uppercase font-extrabold">
-                <NuxtLink to="/" class="nav-link">Home</NuxtLink>
-                <NuxtLink to="/about" class="nav-link">About</NuxtLink>
-                <NuxtLink to="/blog" class="nav-link">Blog</NuxtLink>
+                <div v-for="link in links" :key="link.text">
+                  <NuxtLink v-if="link.external === false" :to="link.to" class="nav-link">{{link.text}}</NuxtLink>
+                  <a v-if="link.external === false" :href="link.to" class="nav-link">{{link.text}}</a>
+                </div>
               </div>
             </div>
           </div>
@@ -111,6 +74,33 @@ export default {
     return {
       showMenu: false,
       showIconPhoto : false,
+      links : [
+        {
+          external : false,
+          text : "Home",
+          to : "/"
+        },
+        {
+          external : false,
+          text : "Blog",
+          to : "/blog"
+        },
+        {
+          external : false,
+          text : "About",
+          to : "/about"
+        },
+        {
+          external : false,
+          text : "Projects",
+          to : "/projects"
+        },
+        {
+          external : true,
+          to : "https://docs.google.com/document/d/1U2hiahqI3V-yBjoid0Xd41Mhi3JK3YYldfJ3ZWODy14/edit?usp=sharing",
+          text : "Resume"
+        }
+      ]
     };
   },
   components : {
@@ -125,6 +115,10 @@ export default {
   methods: {
     handleScroll(event){
         this.showIconPhoto = (window.scrollY > 330)
+    },
+    toggleMenuFromMobile(show){
+      this.showMenu = show
+      this.$set(this, 'showMenu', show)
     }
   },
 };

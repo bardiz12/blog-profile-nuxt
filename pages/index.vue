@@ -34,7 +34,7 @@
               <div class="w-full md:w-1/2">
                 <aos
                   animation-class="animate__animated animate__fadeInRight"
-                  threshold="0"
+                  :threshold="0"
                 >
                   <div class="md:pl-10">
                     <h1 class="font-bold text-3xl mt-5">Tech Stacks</h1>
@@ -80,22 +80,16 @@
                   </div>
                   <div class="md:w-4/5">
                     <ul class="fa-ul space-y-2">
-                      <li>
-                        <a href="#"
-                          ><i class="fa fa-pen fa-li"></i> Writeup JHDigitalCTF
-                          (John Hammond Digital CTF) 2019 [INDEX]</a
-                        >
+                      <li v-for="article in articles" :key="`article-${article.slug}`">
+                        <NuxtLink :to="`/blog/${article.year}/${article.slug}`">
+                          <i class="fa fa-pen fa-li"></i> {{article.title}}
+                        </NuxtLink>
                       </li>
-                      <li>
-                        <a href="#"
-                          ><i class="fa fa-pen fa-li"></i> Writeup JHDigitalCTF
-                          (John Hammond Digital CTF) 2019 [INDEX]</a
-                        >
-                      </li>
-                      <li>...</li>
                     </ul>
                     <div class="flex justify-center">
-                      <Button>Read Blog</Button>
+                      <NuxtLink :to="`/blog`">
+                        <Button>Read Blog</Button>
+                      </NuxtLink>
                     </div>
                     <!-- <div class="border px-1 py-2 border-gray-200 w-full flex">
                     <i class="fa fa-pen"></i>
@@ -124,6 +118,7 @@ import Profile from "@/components/Profile";
 import SocialBanner from "@/components/SocialBanner";
 import TechIllustration from "~/assets/illustration/tech.svg?inline";
 import WriterIllustration from "~/assets/illustration/writer.svg?inline";
+import moment from "moment"
 
 export default {
   components: {
@@ -131,6 +126,16 @@ export default {
     SocialBanner,
     TechIllustration,
     WriterIllustration,
+  },
+  async asyncData({ $content, params }) {
+    const articles = await $content("blog", { deep: true })
+      .only(["title", "slug", "year"])
+      .sortBy("date", "desc")
+      .limit(3)
+      .fetch();
+    return {
+      articles,
+    };
   },
   head() {
     return {

@@ -7,7 +7,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'blogprof2',
+    title: 'Bardizba Z - Fullstack Web Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -54,7 +54,13 @@ export default {
   axios: {},
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
+      }
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -69,5 +75,5 @@ export default {
       regular: true,
       brands: true
     }
-  }
+  },
 }

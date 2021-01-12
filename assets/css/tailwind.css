@@ -17,3 +17,10 @@ a.nav-link:hover{
 .dark a.nav-link:hover{
     @apply
 }
+
+.prose a{
+    @apply text-blue-500;
+}
+.prose a:hover{
+    @apply text-blue-600;
+}

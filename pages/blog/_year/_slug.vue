@@ -4,6 +4,9 @@
   >
     <article class="mx-5 md:mx-0">
       <h1>{{ article.title }}</h1>
+      <div class="pb-3">
+        {{ article.formatedDate }} | <ReadingTime :body="article.body" />
+      </div>
       <div
         class="w-full space-x-2"
         v-if="article.tags !== undefined && article.tags !== null"
@@ -17,14 +20,13 @@
           #{{ tag }}
         </span>
       </div>
-      <SocialShare class="pt-5"/>
+      <SocialShare class="pt-5" />
       <img :src="article.thumbnail" v-if="article.thumbnail !== null" />
-      
+
       <nuxt-content :document="article" />
     </article>
 
     <div class="mt-10">
-    
       <div class="text-2xl font-semibold">
         <i class="fa fa-comments"></i> Comments
       </div>
@@ -60,10 +62,35 @@
 
 <script>
 import SocialShare from "@/components/SocialShare";
+import ReadingTime from "@/components/ReadingTime";
+import moment from "moment";
 
 export default {
   components: {
     SocialShare,
+    ReadingTime,
+  },
+  head() {
+    return {
+      title: `${this.article.title} | Bardizba Z - Fullstack Web Developer`,
+      meta: [
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: this.article.keywords,
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.article.keywords,
+        },
+        {
+          hid: "author",
+          name: "author",
+          content: this.article.author,
+        },
+      ],
+    };
   },
   async asyncData({ $content, params, error }) {
     try {
@@ -82,7 +109,8 @@ export default {
       if (article.image !== undefined && article.image !== null) {
         article.thumbnail = `${article.dir}/${article.image}`;
       }
-
+      article.moment = moment(article.date);
+      article.formatedDate = article.moment.format("dddd, D MMMM Y");
       return {
         article,
       };

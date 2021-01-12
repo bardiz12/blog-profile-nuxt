@@ -1,5 +1,5 @@
 <template>
-  <div class="container px-10 lg:mx-0">
+  <div class="container px-10 lg:mx-0 pt-10">
     <div class="flex flex-wrap justify-center items-center">
       <!-- <div> -->
       <img

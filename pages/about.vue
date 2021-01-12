@@ -16,8 +16,8 @@
           </div>
         </div>
       </div>
-      <div class="mb-5 max-w-screen-xl mx-auto">
-        <div class=" container md:px-20 pt-20">
+      <div class="mb-5 max-w-screen-xl">
+        <div class="container lg:px-40 pt-20 mx-auto">
           <div class="flex flex-wrap">
             <div
               class="w-full md:w-1/2"
@@ -142,7 +142,7 @@ export default {
             },
             {
               text: "Universitas Negeri Semarang",
-              subTtext: "Computer Science (S1)",
+              subText: "Computer Science (S1)",
               title: "2016 - 2020",
               logo: require("~/assets/image/unnes.png"),
             },

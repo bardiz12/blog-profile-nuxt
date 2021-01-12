@@ -17,7 +17,7 @@
       <div class="w-full md:w-2/3">
         <div class="md:pl-10">
           <div
-            v-for="year in Object.keys(articlesByYear)"
+            v-for="year in Object.keys(articlesByYear).sort( (a,b) => b - a)"
             :key="year"
             class="flex"
           >
@@ -57,6 +57,11 @@ export default {
   components: {
     WriterIllustration,
   },
+  head() {
+    return {
+      title: "Blog | Bardizba Z - Fullstack Web Developer",
+    };
+  },
   async asyncData({ $content, params }) {
     const articles = await $content("blog", { deep: true })
       .only(["title", "slug", "author", "date"])
@@ -76,5 +81,6 @@ export default {
       articlesByYear,
     };
   },
+
 };
 </script>

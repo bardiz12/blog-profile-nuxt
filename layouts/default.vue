@@ -1,6 +1,6 @@
 <template>
-  <div :class="{'dark' : this.$store.state.site.isDark}" class="">
-    <div class="bg-gray-50 dark:bg-gray-800 dark:text-white transition-colors duration-100">
+  <div :class="{'dark' : this.$store.state.site.isDark}" >
+    <div class="bg-gray-50 dark:bg-gray-800 dark:text-white transition-colors duration-100" style="min-height : 100vh">
       <Navbar />
       <Nuxt class="pt-40" />
     </div>

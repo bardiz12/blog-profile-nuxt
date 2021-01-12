@@ -22,6 +22,7 @@
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
     "nuxt": "^2.14.5",
+    "prism-themes": "^1.5.0",
     "vue-aos": "^1.1.0"
   },
   "devDependencies": {
