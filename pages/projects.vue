@@ -28,7 +28,7 @@
               <!-- <h3 class="font-bold text-xl">
                 <i :class="project.icon"></i> {{ project.title }}
               </h3> -->
-              <ProjectCard :project="project" class="mx-2 max-w-sm mb-5" />
+              <ProjectCard :project="project" class="mx-auto md:mx-2 max-w-sm mb-5" />
             </div>
           </div>
         </div>
