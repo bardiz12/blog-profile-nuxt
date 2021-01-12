@@ -55,7 +55,7 @@
               <div class="flex flex-row space-x-5 text-sm uppercase font-extrabold">
                 <div v-for="link in links" :key="link.text">
                   <NuxtLink v-if="link.external === false" :to="link.to" class="nav-link">{{link.text}}</NuxtLink>
-                  <a v-if="link.external === false" :href="link.to" class="nav-link">{{link.text}}</a>
+                  <a v-if="link.external === true" :href="link.to" class="nav-link">{{link.text}}</a>
                 </div>
               </div>
             </div>
