@@ -42,22 +42,24 @@
                       Technologies that i often use
                     </span>
                     <div class="md:w-4/5 flex flex-wrap">
-                      <img class="w-16 p-2" src="~/assets/stacks/php.png" />
-                      <img class="w-16 p-2" src="~/assets/stacks/node.svg" />
-                      <img class="w-16 p-2" src="~/assets/stacks/python.svg" />
+                      <img class="w-16 p-2" width="4rem" height="4rem" src="~/assets/stacks/php.png" />
+                      <img class="w-16 p-2" width="4rem" height="4rem" src="~/assets/stacks/node.svg" />
+                      <img class="w-16 p-2" width="4rem" height="4rem" src="~/assets/stacks/python.svg" />
                       <img
-                        class="w-16 p-2"
+                        class="w-16 p-2" width="4rem" height="4rem"
                         src="~/assets/stacks/androidstudio.svg"
                       />
 
-                      <img class="w-16 p-2" src="~/assets/stacks/laravel.png" />
+                      <img class="w-16 p-2" width="4rem" height="4rem" src="~/assets/stacks/laravel.png" />
                       <img class="w-16 p-2" src="~/assets/stacks/vue.svg" />
                       <img
                         class="w-16 p-2"
+                        width="4rem" height="4rem"
                         src="~/assets/stacks/tailwind.svg"
                       />
                       <img
                         class="w-16 p-2"
+                        width="4rem" height="4rem"
                         src="~/assets/stacks/bootstrap.png"
                       />
                     </div>

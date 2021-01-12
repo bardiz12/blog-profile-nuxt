@@ -1,9 +1,11 @@
 <template>
-  <div class="container px-10 lg:mx-0 pt-10">
+  <div class="container px-10 lg:mx-0 pt-10<img">
     <div class="flex flex-wrap justify-center items-center">
       <!-- <div> -->
       <img
         src="~/assets/portrait.jpg"
+        width="12rem"
+        height="12rem"
         class="w-48 rounded-full border border-white animate-pulse"
       />
       <!-- </div> -->
