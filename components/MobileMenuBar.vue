@@ -2,6 +2,7 @@
   <div class="md:hidden" v-show="showMenu">
     <div class="fixed top-0 left-0 w-full z-30">
       <div
+        @click="toggleMobileMenu"
         class="h-screen w-screen w-full absolute bg-gray-800 opacity-50"
       ></div>
     </div>
