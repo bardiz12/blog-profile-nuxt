@@ -5,7 +5,7 @@
     <article class="mx-5 md:mx-0">
       <h1>{{ article.title }}</h1>
       <div class="pb-3">
-        {{ article.formatedDate }} | <ReadingTime :body="article.body" />
+        {{ article.formatedDate }} | <ReadingTime :body="article.body" /> | <DisqusCount :identifier="article.slug"/>
       </div>
       <div
         class="w-full space-x-2"
@@ -20,7 +20,7 @@
           #{{ tag }}
         </span>
       </div>
-      <SocialShare class="pt-5" />
+      <SocialShare class="pt-5" :titile="article.title" />
       <img :src="article.thumbnail" v-if="article.thumbnail !== null" />
 
       <nuxt-content :document="article" />
@@ -30,7 +30,9 @@
       <div class="text-2xl font-semibold">
         <i class="fa fa-comments"></i> Comments
       </div>
-      <Disqus />
+      <Disqus :pageConfig="{
+        identifier : article.slug
+      }"/>
     </div>
   </div>
 </template>
