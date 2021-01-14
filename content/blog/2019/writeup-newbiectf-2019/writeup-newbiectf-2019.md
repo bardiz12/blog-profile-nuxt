@@ -4,6 +4,7 @@ title: Writeup NewbieCTF 2019
 date: 2019-11-03
 author: Bardizba
 keywords: [WRITE-UP NewbieCTF 2019]
+year: 2019
 description: WRITE-UP NewbieCTF 2019
 excerpt: NewbieCTF 2019. A cool CTF from CTF Team KorNewbie, Three High school clubs(D.I.S, CPU, N.I.T)newbie CTF cocok buat yang mau belajar CTF, karna soal nya masih tergolong mudah. sayangnya forensiknya file nya gede - gede wkwk. dan web exploit nya cuma satu.
 tags : ["ctf"]

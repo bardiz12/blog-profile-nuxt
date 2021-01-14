@@ -77,4 +77,21 @@ export default {
       brands: true
     }
   },
+  generate:{
+    async routes(){
+      const { $content } = require('@nuxt/content')
+      const articles = await $content("blog", { deep: true })
+        .only(["title", "slug", "author", "date", 'year'])
+        .sortBy("date", "desc")
+        .fetch()
+        ;
+
+      return articles.map( article => {
+        return {
+          route : `/blog/${article.year}/${article.slug}`,
+          payload : article
+        }
+      })
+    }
+  }
 }
