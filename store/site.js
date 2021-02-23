@@ -1,7 +1,8 @@
-
-const isDark = window.localStorage.getItem('is_dark') === null
-                ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                : JSON.parse(window.localStorage.getItem('is_dark'))
+const isDark = process.browser ?
+                                (window.localStorage.getItem('is_dark') === null
+                                    ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                                    : JSON.parse(window.localStorage.getItem('is_dark')))
+                                : false
 
 export const state = () => ({
     isDark
