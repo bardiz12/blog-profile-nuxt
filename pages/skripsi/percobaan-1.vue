@@ -71,7 +71,7 @@
 <script>
 import moment from "moment";
 import DataTable from "@andresouzaabreu/vue-data-table";
-import { getDatasetAwal, getData } from "./dataProvider";
+import { getDatasetAwal, getData } from "./../../data/dataProvider";
 
 export default {
   components: {
