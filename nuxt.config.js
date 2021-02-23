@@ -1,6 +1,6 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: false,
+  ssr: true,
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -65,16 +65,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    babel: {
-      presets(env, [ preset, options ]) {
-        return [
-          [ "@babel/preset-env", options ]
-        ]
-      },
-      plugins : [
-        'transform-runtime'
-      ]
-    }
   },
   server: {
     port: 3001, // default: 3000
