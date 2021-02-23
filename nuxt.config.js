@@ -70,7 +70,10 @@ export default {
         return [
           [ "@babel/preset-env", options ]
         ]
-      }
+      },
+      plugins : [
+        'transform-runtime'
+      ]
     }
   },
   server: {
