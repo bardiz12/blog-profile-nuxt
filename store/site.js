@@ -1,6 +1,13 @@
-const isDark = localStorage.getItem('is_dark') === null
-    ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    : JSON.parse(localStorage.getItem('is_dark'))
+const getIsDarkFromLocalStorage = () => {
+    if(window === undefined){
+        return false
+    }
+
+    return window.localStorage.getItem('is_dark') === null
+        ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        : JSON.parse(window.localStorage.getItem('is_dark'))
+}
+const isDark = getIsDarkFromLocalStorage()
 
 export const state = () => ({
     isDark
