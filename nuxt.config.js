@@ -17,7 +17,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"}
+      { rel: 'stylesheet', href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" }, {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap'
+      }
     ]
   },
 
@@ -29,7 +32,7 @@ export default {
   plugins: [
     "~/plugins/baseComponent.js",
     "~/plugins/disqus.js",
-    {src:"~/plugins/aos.js", ssr:false}
+    { src: "~/plugins/aos.js", ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -80,8 +83,8 @@ export default {
       brands: true
     }
   },
-  generate:{
-    async routes(){
+  generate: {
+    async routes() {
       const { $content } = require('@nuxt/content')
       const articles = await $content("blog", { deep: true })
         .only(["title", "slug", "author", "date", 'year'])
@@ -89,10 +92,10 @@ export default {
         .fetch()
         ;
 
-      return articles.map( article => {
+      return articles.map(article => {
         return {
-          route : `/blog/${article.year}/${article.slug}`,
-          payload : article
+          route: `/blog/${article.year}/${article.slug}`,
+          payload: article
         }
       })
     }
