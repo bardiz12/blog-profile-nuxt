@@ -95,7 +95,7 @@ export default {
       this.raw.datasetAwal = await getData("dataset_ori.csv");
 
       this.raw.textCleansingAndCaseFolding = await getData(
-        "after_cleansing.csv"
+        "percobaan-1/after_cleansing.csv"
       );
       this.raw.stopwords = await getData("percobaan-1/delete_stopwords.csv");
       this.raw.stemText = await getData("percobaan-1/after_stem.csv");
