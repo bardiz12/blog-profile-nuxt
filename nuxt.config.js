@@ -65,6 +65,13 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    babel: {
+      presets(env, [ preset, options ]) {
+        return [
+          [ "@babel/preset-env", options ]
+        ]
+      }
+    }
   },
   server: {
     port: 3001, // default: 3000
