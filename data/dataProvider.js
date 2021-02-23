@@ -17,6 +17,9 @@ const mapIndexToLabelName = (rows, label_field="label") => {
 }
 
 const getData = async (url) => {
+    const dev = process.env.NODE_ENV !== 'production';
+    let server = dev ? 'http://localhost:3001' : 'https://bardiz12.now.sh';
+    server = `${server}/skripsi/`
     const data = await (await fetch(url)).text()
     const rows = await csvtojson().fromString(data)
     const header = Object.keys(rows[0])
@@ -27,7 +30,7 @@ const getData = async (url) => {
     }
 }
 const getDatasetAwal = async () => {
-    return await getData("./dataset_ori.csv")
+    return await getData("dataset_ori.csv")
 }
 
 module.exports = {

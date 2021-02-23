@@ -92,16 +92,16 @@ export default {
   },
   methods: {
     loadAllData: async function () {
-      this.raw.datasetAwal = await getData("/skripsi/dataset_ori.csv");
+      this.raw.datasetAwal = await getData("dataset_ori.csv");
 
       this.raw.textCleansingAndCaseFolding = await getData(
         "after_cleansing.csv"
       );
-      this.raw.stopwords = await getData("delete_stopwords.csv");
-      this.raw.stemText = await getData("after_stem.csv");
-      this.raw.fpgrowthItemset = await getData("fpgrowthresult.csv");
-      this.raw.fpgrowthDataset = await getData("new_fp_growth_dataset.csv");
-      this.raw.idf = await getData("idf.csv");
+      this.raw.stopwords = await getData("percobaan-1/delete_stopwords.csv");
+      this.raw.stemText = await getData("percobaan-1/after_stem.csv");
+      this.raw.fpgrowthItemset = await getData("percobaan-1/fpgrowthresult.csv");
+      this.raw.fpgrowthDataset = await getData("percobaan-1/new_fp_growth_dataset.csv");
+      this.raw.idf = await getData("percobaan-1/idf.csv");
     },
   },
   created() {
