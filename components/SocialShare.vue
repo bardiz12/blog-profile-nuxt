@@ -55,7 +55,9 @@ export default {
     };
   },
   mounted() {
-    this.data.url = window.location.href;
+    if(process.client){
+      this.data.url = window.location.href;
+    }
   },
 };
 </script>

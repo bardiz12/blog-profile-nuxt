@@ -1,11 +1,19 @@
 <template>
   <div>
-    <MobileMenubar :show-menu="showMenu" :links="links" v-on:toggleMenu="toggleMenuFromMobile"/>
+    <MobileMenubar
+      :show-menu="showMenu"
+      :links="links"
+      v-on:toggleMenu="toggleMenuFromMobile"
+    />
     <div class="mx-10 md:m-auto">
-      <div class="bg-white dark:bg-gray-800 dark:text-white fixed top-0 left-0 w-full z-20 px-3 md:px-10  transition-all duration-100">
+      <div
+        class="bg-white dark:bg-gray-800 dark:text-white fixed top-0 left-0 w-full z-20 px-3 md:px-10 transition-all duration-100"
+      >
         <div
           class="transition-all duration-200 flex items-center w-full justify-between max-w-screen-lg m-auto mt-5 rounded-md py-3 px-0"
-          :class="{'border border-gray-300 dark:border-gray-500 transition-shadow duration-200 shadow-lg hover:shadow-2xl px-2' : showIconPhoto}"
+          :class="{
+            'border border-gray-300 dark:border-gray-500 transition-shadow duration-200 shadow-lg hover:shadow-2xl px-2': showIconPhoto,
+          }"
         >
           <div class="p-3 font-extrabold flex">
             <div class="flex items-center" v-show="showIconPhoto">
@@ -17,7 +25,7 @@
             </div>
             <div class="cursor-pointer">
               <div class="text-2xl pl-3" @click="$store.commit('site/toggle')">
-                <span>{{$store.state.site.isDark ? '🌚' : '🌝' }}</span>
+                <span>{{ $store.state.site.isDark ? "🌚" : "🌝" }}</span>
               </div>
             </div>
           </div>
@@ -49,13 +57,24 @@
       From: "transform opacity-100 scale-100"
       To: "transform opacity-0 scale-95"
   -->
-              
             </div>
             <div class="hidden md:block">
-              <div class="flex flex-row space-x-5 text-sm uppercase font-extrabold">
+              <div
+                class="flex flex-row space-x-5 text-sm uppercase font-extrabold"
+              >
                 <div v-for="link in links" :key="link.text">
-                  <NuxtLink v-if="link.external === false" :to="link.to" class="nav-link">{{link.text}}</NuxtLink>
-                  <a v-if="link.external === true" :href="link.to" class="nav-link">{{link.text}}</a>
+                  <NuxtLink
+                    v-if="link.external === false"
+                    :to="link.to"
+                    class="nav-link"
+                    >{{ link.text }}</NuxtLink
+                  >
+                  <a
+                    v-if="link.external === true"
+                    :href="link.to"
+                    class="nav-link"
+                    >{{ link.text }}</a
+                  >
                 </div>
               </div>
             </div>
@@ -73,53 +92,58 @@ export default {
   data() {
     return {
       showMenu: false,
-      showIconPhoto : false,
-      links : [
+      showIconPhoto: false,
+      links: [
         {
-          external : false,
-          text : "Home",
-          to : "/"
+          external: false,
+          text: "Home",
+          to: "/",
         },
         {
-          external : false,
-          text : "Blog",
-          to : "/blog"
+          external: false,
+          text: "Blog",
+          to: "/blog",
         },
         {
-          external : false,
-          text : "About",
-          to : "/about"
+          external: false,
+          text: "About",
+          to: "/about",
         },
         {
-          external : false,
-          text : "Projects",
-          to : "/projects"
+          external: false,
+          text: "Projects",
+          to: "/projects",
         },
         {
-          external : true,
-          to : "https://docs.google.com/document/d/1U2hiahqI3V-yBjoid0Xd41Mhi3JK3YYldfJ3ZWODy14/edit?usp=sharing",
-          text : "Resume"
-        }
-      ]
+          external: true,
+          to:
+            "https://docs.google.com/document/d/1U2hiahqI3V-yBjoid0Xd41Mhi3JK3YYldfJ3ZWODy14/edit?usp=sharing",
+          text: "Resume",
+        },
+      ],
     };
   },
-  components : {
-    MobileMenubar
+  components: {
+    MobileMenubar,
   },
-  created(){
-    window.addEventListener('scroll',this.handleScroll)
+  created() {
+    if (process.client) {
+      window.addEventListener("scroll", this.handleScroll);
+    }
   },
-  destroyed(){
-    window.removeEventListener('scroll', this.handleScroll)
+  destroyed() {
+    if (process.client) {
+      window.removeEventListener("scroll", this.handleScroll);
+    }
   },
   methods: {
-    handleScroll(event){
-        this.showIconPhoto = (window.scrollY > 330)
+    handleScroll(event) {
+      this.showIconPhoto = window.scrollY > 330;
     },
-    toggleMenuFromMobile(show){
-      this.showMenu = show
-      this.$set(this, 'showMenu', show)
-    }
+    toggleMenuFromMobile(show) {
+      this.showMenu = show;
+      this.$set(this, "showMenu", show);
+    },
   },
 };
 </script>
