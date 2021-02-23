@@ -1,5 +1,2 @@
-import Vue from 'vue';
-import AOS from 'aos';
-
-Vue.use(AOS.init({
-}));
+import VueAos from 'vue-aos'
+Vue.component('aos', VueAos)
