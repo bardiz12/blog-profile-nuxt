@@ -1,6 +1,6 @@
 # blogprof2
 # Demo
-[Demo](https://bardiz12.netlify.app).
+[Demo](https://bardiz.netlify.app).
 
 ## Build Setup
 
