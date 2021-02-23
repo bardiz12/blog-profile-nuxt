@@ -1,8 +1,6 @@
-import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
-
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: faLessThanEqual,
+  ssr: true,
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
