@@ -1,5 +1,5 @@
-// plugins/aos.js
-import AOS from "aos";
-export default ({ app }) => {
-  app.AOS = new AOS.init();
-};
+import Vue from 'vue';
+import AOS from 'aos';
+
+Vue.use(AOS.init({
+}));
