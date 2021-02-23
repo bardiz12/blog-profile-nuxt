@@ -28,7 +28,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     "~/plugins/baseComponent.js",
-    "~/plugins/disqus.js"
+    "~/plugins/disqus.js",
+    {src:"~/plugins/aos.js", ssr:false}
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
