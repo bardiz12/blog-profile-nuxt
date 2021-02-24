@@ -33,6 +33,10 @@ export default {
         this.mql = window.matchMedia("(prefers-color-scheme: dark)");
 
         this.mql.addEventListener("change", this.themeListener);
+        const isDark = window.localStorage.getItem('is_dark') === null
+                                    ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                                    : JSON.parse(window.localStorage.getItem('is_dark'));
+        this.$store.commit("site/changeThemeSetting", { isDark});
       }
     },
     themeListener(event) {

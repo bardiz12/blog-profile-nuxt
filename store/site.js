@@ -1,9 +1,5 @@
-const isDark = window.localStorage.getItem('is_dark') === null
-                                    ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                                    : JSON.parse(window.localStorage.getItem('is_dark'))
-
 export const state = () => ({
-    isDark
+    isDark: false
 })
 
 export const mutations = {
