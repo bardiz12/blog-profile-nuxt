@@ -117,7 +117,7 @@ export default {
         {
           external: true,
           to:
-            "https://docs.google.com/document/d/1U2hiahqI3V-yBjoid0Xd41Mhi3JK3YYldfJ3ZWODy14/edit?usp=sharing",
+            "https://docs.google.com/document/d/1ClJ5l4JjWachE3H4tkZ6WUDERDCqjhA8AFX0CXemQBA/edit?usp=sharing",
           text: "Resume",
         },
       ],
