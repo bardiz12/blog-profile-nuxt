@@ -20,7 +20,7 @@
         <div class="container lg:px-40 pt-20 mx-auto">
           <div class="flex flex-wrap">
             <div
-              class="w-full md:w-1/2"
+              class="w-full md:w-1/2 ml-4 md:ml-0"
               v-for="content in aboutData"
               :key="content.name"
             >
@@ -100,7 +100,7 @@ export default {
         },
         {
           name: "Achievement",
-          icon : "fa fa-stars",
+          icon : "fa fa-trophy",
           color : "purple",
           items : [
             {
