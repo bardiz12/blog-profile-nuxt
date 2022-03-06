@@ -110,18 +110,6 @@ export default {
               logo: require("~/assets/image/unnes.png")
             },
             {
-              subText : "Finalist of Mobile Applcation Competition",
-              text : "Institut Teknologi Bandung Cooperative Day",
-              title : "2018",
-              logo: "https://itbcd.files.wordpress.com/2015/12/logoitbcd.png?w=680"
-            },
-            {
-              subText : "Finalist of Capture The Flag Competition",
-              text : "JOINTS 2018 Universitas Gadjah Mada",
-              title : "2018",
-              logo: null
-            },
-            {
               subText : "Finalist of Capture The Flag Competition",
               text : "JOINTS 2019 Universitas Gadjah Mada",
               title : "2019",
@@ -133,6 +121,18 @@ export default {
               title : "2019",
               logo: null
             },
+                        {
+              subText : "Finalist of Mobile Applcation Competition",
+              text : "Institut Teknologi Bandung Cooperative Day",
+              title : "2018",
+              logo: "https://itbcd.files.wordpress.com/2015/12/logoitbcd.png?w=680"
+            },
+            {
+              subText : "Finalist of Capture The Flag Competition",
+              text : "JOINTS 2018 Universitas Gadjah Mada",
+              title : "2018",
+              logo: null
+            },
           ]
         },
         {
@@ -141,16 +141,16 @@ export default {
           color: "blue",
           items: [
             {
-              text: "SMA N 1 Rembang",
-              subText: "MIPA",
-              title: "2013 - 2016",
-              logo: require("~/assets/image/smansa.png"),
-            },
-            {
               text: "Universitas Negeri Semarang",
               subText: "Computer Science (S1)",
               title: "2016 - 2020",
               logo: require("~/assets/image/unnes.png"),
+            },
+            {
+              text: "SMA N 1 Rembang",
+              subText: "MIPA",
+              title: "2013 - 2016",
+              logo: require("~/assets/image/smansa.png"),
             },
           ],
         },
@@ -159,12 +159,6 @@ export default {
           icon: "fa fa-users",
           color: "red",
           items: [
-            {
-              subText: "Information Technology Division",
-              text: "OSIS SMA N 1 Rembang",
-              title: "2015",
-              logo: null,
-            },
             {
               subText: "Specialized Staff of Design & Animation Division",
               text: "Screenshot Ilmu Komputer Unnes",
@@ -181,6 +175,12 @@ export default {
               subText: "Chief of Screenshot Underbow",
               text: "Hima Ilmu Komputer Unnes",
               title: "2017",
+              logo: null,
+            },
+            {
+              subText: "Information Technology Division",
+              text: "OSIS SMA N 1 Rembang",
+              title: "2015",
               logo: null,
             },
           ],

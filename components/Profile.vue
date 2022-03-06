@@ -11,7 +11,7 @@
       <!-- </div> -->
       <!-- <div> -->
       <p class="mt-3 px-4 max-w-md text-3xl font-bold lg:pl-10 animate-bounce">
-        <span>Hi !</span><br />
+        <span>Hello !</span><br />
         <span>I'm Bardizba</span>
       </p>
       <!-- </div> -->
@@ -19,10 +19,7 @@
 
     <div class="w-full mt-10">
       <p class="container max-w-lg text-center font-medium">
-          A Freelance Fullstack Web
-      Developer from Indonesia. Most of the projects i build are using Laravel
-      for the backend and Vue or Jquery for the Frontend. I also have interest
-      in Cyber Security.
+          I'm a freelance Fullstack Web Developer from Indonesia. Most of the projects I build use Laravel for the backend and Vue or Jquery for the frontend.
       </p>
     </div>
   </div>
