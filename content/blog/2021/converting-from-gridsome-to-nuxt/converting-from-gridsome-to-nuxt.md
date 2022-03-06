@@ -10,4 +10,4 @@ description: Mengubah Site Portfolio dari Vue-Gridsome ke Nuxt.js
 tags : ["nuxt","jamstack"]
 ---
 
-Cuma tes artikel aja maap.
+tbp

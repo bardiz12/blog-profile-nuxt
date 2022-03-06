@@ -73,6 +73,7 @@
                     v-if="link.external === true"
                     :href="link.to"
                     class="nav-link"
+                    target="_blank"
                     >{{ link.text }}</a
                   >
                 </div>

@@ -24,7 +24,7 @@
               v-for="content in aboutData"
               :key="content.name"
             >
-              <h3 class="font-bold text-xl">
+              <h3 class="font-bold text-xl mt-5 mb-2">
                 <i :class="content.icon"></i> {{ content.name }}
               </h3>
 
@@ -67,10 +67,22 @@ export default {
           color: "indigo",
           items: [
             {
-              subText: "Self Employee",
-              text: "Freelance Fullstack Developer",
-              title: "2016 - now",
-              logo: null,
+              subText: "Backend Developer",
+              text: "PT Surya Anugrah Mulya",
+              title: "2021 - Now",
+              logo: "https://www.surya-am.com/webroot/images/logo-surya-kecil.png",
+            },
+            {
+              subText: "Programmer",
+              text: "UPT TIK Universitas Negeri Semarang",
+              title: "2020 - 2021",
+              logo: require("~/assets/image/unnes.png"),
+            },
+            {
+              subText: "Freelance Software Engineer",
+              text: "IDivisionTech Semarang",
+              title: "2019 - 2020",
+              logo: require("~/assets/image/idivisition.jpeg"),
             },
             {
               subText: "Web Programmer Intern",
@@ -79,16 +91,10 @@ export default {
               logo: require("~/assets/image/ikitas.png"),
             },
             {
-              subText: "Freelance Softwre Engineer",
-              text: "IDivisionTech Semarang",
-              title: "2019-2020",
-              logo: require("~/assets/image/idivisition.jpeg"),
-            },
-            {
-              subText: "Programmer",
-              text: "UPT TIK Universitas Negeri Semarang",
-              title: "2020-Now",
-              logo: require("~/assets/image/unnes.png"),
+              subText: "Self Employee",
+              text: "Freelance Fullstack Developer",
+              title: "2016 - now",
+              logo: null,
             },
           ],
         },
@@ -149,7 +155,7 @@ export default {
           ],
         },
         {
-          name: "Organiztions",
+          name: "Organizations",
           icon: "fa fa-users",
           color: "red",
           items: [

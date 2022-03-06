@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full pl-8 pr-2 py-2">
+  <div class="w-full pr-4 py-2">
     <div class="order-1 rounded-lg shadow-xl px-6 py-4" :class="{
             'bg-blue-400 dark:bg-blue-800' : color === 'blue',
             'bg-red-400 dark:bg-red-800' : color === 'red',
